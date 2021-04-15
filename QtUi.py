@@ -1,7 +1,7 @@
-from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget, QToolTip, QPushButton, QLineEdit
-from PyQt5.QtGui import QIcon, QFont
-from PyQt5.QtCore import QUrl
+from PyQt5.QtWebEngineWidgets import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
 from PyQt5.QtMultimedia import QMediaPlayer
 import sys
 
@@ -31,7 +31,7 @@ class Example(QWidget):
         btn.move(900, 5)
         # btn.resize(btn.sizeHint())
         view = QWebEngineView(self)
-        view.load(QUrl("https://192.168.20.120/videoroomtest.html?subscriber-mode=true"))
+        view.load(QUrl("https://www.baidu.com"))
         view.setGeometry(30, 30, 800, 800)
         # _player = QMediaPlayer(self)
         # _videoSurface =
