@@ -1,7 +1,7 @@
-from PyQt5.QtWebEngineWidgets import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget, QToolTip, QPushButton, QLineEdit
+from PyQt5.QtGui import QIcon, QFont
+from PyQt5.QtCore import QUrl
 from PyQt5.QtMultimedia import QMediaPlayer
 import sys
 
@@ -31,12 +31,18 @@ class Example(QWidget):
         btn.move(900, 5)
         # btn.resize(btn.sizeHint())
         view = QWebEngineView(self)
-        view.load(QUrl("https://www.baidu.com"))
+        view.load(QUrl("https://httpswww.msyk.cn/"))
         view.setGeometry(30, 30, 800, 800)
         # _player = QMediaPlayer(self)
         # _videoSurface =
-        self.setGeometry(0, 0, 1000, 1000)
+        self.resize(1000, 1000)
         self.show()
+        # 居中屏幕方法，计算屏幕和窗口的坐标差，除以2即是需要移动的坐标值
+        screen = QDesktopWidget().screenGeometry()
+        size = self.geometry()
+        newLeft = (screen.width() - size.width()) / 2
+        newTop = (screen.height()- size.height()) / 2
+        self.move(newLeft, newTop)
 
     def center(self):
         qr = self.frameGeometry()
